@@ -2,10 +2,12 @@ package main
 
 import "log"
 import "net/http/cgi"
-import "./routes"
+import "go-blog/routes"
+import env "github.com/joho/godotenv"
 
 func main() {
     //http.Handle("/", http.StripPrefix("/", http.FileServer(http.Dir("public/"))))
+    env.Load()
 
     // ルーティングのセット
     if routes.Set() != true {

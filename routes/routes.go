@@ -1,7 +1,7 @@
 package routes
 
 import "net/http"
-import "../ctrl"
+import "go-blog/ctrl"
 
 /*
  * ルーティングをセット
