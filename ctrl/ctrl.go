@@ -9,25 +9,10 @@ type MetaData struct {
     Title string
     Description string
     CurrentPath string
+    FlashText string
 }
 
-func Category(w http.ResponseWriter, r *http.Request) {
-    if r.URL.Path == "/category" {
-        // indexビューを取得
-        page := loadView("category")
 
-        // indexビューにデータを埋め込み
-        page.Execute(w,
-            MetaData{
-                Title:       "golog｜golangブログフレームワーク",
-                Description: "説明文",
-                CurrentPath: "..",
-            })
-    }
-}
-
-func Post(w http.ResponseWriter, r *http.Request) {
-}
 
 /**
  * 内部関数
@@ -44,6 +29,7 @@ func loadView(n string) *template.Template {
     page, err := template.ParseFiles(
         "../view/" + n + ".html",
         "../view/_header.html",
+        "../view/_footer.html",
     )
 
     if err != nil {
