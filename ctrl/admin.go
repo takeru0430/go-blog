@@ -26,7 +26,7 @@ func Admin(w http.ResponseWriter, r *http.Request) {
             })
     } else {
         // 全体的なエラーを管理
-        errorHandler(w, r, http.StatusNotFound)
+        errorHandler(w, r, http.StatusInternalServerError)
     }
 }
 
@@ -49,7 +49,7 @@ func AdminPostCreate(w http.ResponseWriter, r *http.Request) {
         }
     } else {
         // 全体的なエラーを管理
-        errorHandler(w, r, http.StatusNotFound)
+        errorHandler(w, r, http.StatusInternalServerError)
     }
 }
 
@@ -59,7 +59,7 @@ func AdminPostEdit(w http.ResponseWriter, r *http.Request) {
         log.Printf("a")
     } else {
         // 全体的なエラーを管理
-        errorHandler(w, r, http.StatusNotFound)
+        errorHandler(w, r, http.StatusInternalServerError)
     }
 }
 
@@ -69,6 +69,6 @@ func AdminPost(w http.ResponseWriter, r *http.Request) {
         log.Printf("a")
     } else {
         // 全体的なエラーを管理
-        errorHandler(w, r, http.StatusNotFound)
+        errorHandler(w, r, http.StatusInternalServerError)
     }
 }

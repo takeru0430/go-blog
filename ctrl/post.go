@@ -37,7 +37,7 @@ func PostCreateForm(w http.ResponseWriter, r *http.Request) {
         return
     } else {
         // 全体的なエラーを管理
-        errorHandler(w, r, http.StatusNotFound)
+        errorHandler(w, r, http.StatusInternalServerError)
     }
 }
 
@@ -115,6 +115,6 @@ func PostCreateSubmit(w http.ResponseWriter, r *http.Request) {
         return
     } else {
         // 全体的なエラーを管理
-        errorHandler(w, r, http.StatusNotFound)
+        errorHandler(w, r, http.StatusInternalServerError)
     }
 }

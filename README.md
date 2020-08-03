@@ -1,2 +1,7 @@
 # go-blog
-go-blog is Laravel-full Web FrameWork by Golang
+go-blog is Web FrameWork like Laravel wirtten in Golang.
+
+# install
+```
+sh build.sh
+```

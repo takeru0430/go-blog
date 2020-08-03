@@ -1,6 +1,6 @@
 package main
 
-import "log"
+// import "log"
 import "net/http/cgi"
 import "go-blog/routes"
 import env "github.com/joho/godotenv"
@@ -10,9 +10,10 @@ func main() {
     env.Load()
 
     // ルーティングのセット
-    if routes.Set() != true {
-        log.Printf("エラー：ルーティングに問題があります。")
-    }
+    //if routes.Set() != true {
+    //    log.Printf("エラー：ルーティングに問題があります。")
+    //}
+    routes.Set()
 
     // listen
     cgi.Serve(nil)

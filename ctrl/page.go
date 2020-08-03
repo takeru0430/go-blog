@@ -2,6 +2,7 @@ package ctrl
 
 //import "log"
 import "net/http"
+import "os"
 //import . "go-blog/db"
 
 
@@ -11,8 +12,10 @@ import "net/http"
 
 // トップページ
 func Home(w http.ResponseWriter, r *http.Request) {
-    // パスが / だった場合
-    if r.URL.Path == "/" {
+    // get env data
+    p := os.Getenv("SUB_DIRECTORY_PATH")
+
+    if r.URL.Path == p + "/" {
         // DB
         /*
         row, err := Db.Query("SELECT name FROM `dev_go-blog`.post WHERE id = 1")
@@ -35,6 +38,6 @@ func Home(w http.ResponseWriter, r *http.Request) {
             })
     } else {
         // 全体的なエラーを管理
-        errorHandler(w, r, http.StatusNotFound)
+        errorHandler(w, r, http.StatusInternalServerError)
     }
 }
