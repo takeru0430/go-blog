@@ -1,3 +1,9 @@
 #!/bin/bash
 
-go build -ldflags "-s -w" -o public/app.cgi app.go
+echo "==================================== start go build ===================================="
+
+#go build -x app.go
+
+go run app.go
+
+echo "==================================== end go build ===================================="

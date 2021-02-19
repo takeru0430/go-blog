@@ -1,22 +1,15 @@
 package routes
 
 import "net/http"
-import "go-blog/ctrl"
+import "local.pkg/ctrl"
 import "os"
-//import "flag"
-//import "regexp"
-//import "github.com/google/logger"
 
-//const logPath = "./log/go-blog.log"
 
-//var verbose = flag.Bool("verbose", false, "print info level logs to stdout")
-
-/* * ルーティングをセット */
+/* ルーティングをセット */
 // func Set() bool {
 func Set() {
     // get env data
     p := os.Getenv("SUB_DIRECTORY_PATH")
-    //p = "/" + p
 
 
     // 記事関連

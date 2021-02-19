@@ -1,7 +1,8 @@
 package main
 
-import "net/http/cgi"
-import "go-blog/routes"
+import log "log"
+import "net/http"
+import "local.pkg/routes"
 import env "github.com/joho/godotenv"
 
 func main() {
@@ -11,5 +12,9 @@ func main() {
     routes.Set()
 
     // listen
-    cgi.Serve(nil)
+    err := http.ListenAndServe(":3000", nil)
+	if err != nil {
+		// log.Exit("ListenAndServe: ", err.String())
+        log.Fatal(err)
+	}
 }

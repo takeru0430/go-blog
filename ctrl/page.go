@@ -1,6 +1,6 @@
 package ctrl
 
-//import "log"
+import "log"
 import "net/http"
 import "os"
 //import . "go-blog/db"
@@ -38,6 +38,7 @@ func Home(w http.ResponseWriter, r *http.Request) {
             })
     } else {
         // 全体的なエラーを管理
+        log.Fatal("404");
         errorHandler(w, r, http.StatusInternalServerError)
     }
 }

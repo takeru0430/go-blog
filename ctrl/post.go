@@ -2,7 +2,7 @@ package ctrl
 
 import "net/http"
 //import "regexp"
-import . "go-blog/db"
+import . "local.pkg/db"
 import "log"
 //import "strings"
 

@@ -27,9 +27,9 @@ func errorHandler(w http.ResponseWriter, r *http.Request, status int) {
 
 func loadView(n string) *template.Template {
     page, err := template.ParseFiles(
-        "../view/" + n + ".html",
-        "../view/_header.html",
-        "../view/_footer.html",
+        "./view/" + n + ".html",
+        "./view/_header.html",
+        "./view/_footer.html",
     )
 
     if err != nil {
