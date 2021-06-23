@@ -1,7 +1,7 @@
-# go-blog
-go-blog is Web FrameWork like Laravel wirtten in Golang.
+## go-blog
+ポートフォリオとして、golangでlaravelのような感覚でサイトを構築できるフレームワークのようなものを作成してみました。
 
-# install
+## 初回インストール用コマンド
 ```
 sh build.sh
 ```
