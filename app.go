@@ -1,9 +1,11 @@
 package main
 
-import log "log"
-import "net/http"
-import "local.pkg/routes"
-import env "github.com/joho/godotenv"
+import (
+	env "github.com/joho/godotenv"
+	"local.pkg/routes"
+	log "log"
+	"net/http"
+)
 
 func main() {
     env.Load()
