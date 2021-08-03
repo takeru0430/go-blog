@@ -1,0 +1,26 @@
+{
+  "name": "go-blog",
+  "version": "1.0.0",
+  "description": "ポートフォリオとして、golangでlaravelのような感覚でサイトを構築できるフレームワークのようなものを作成してみました。",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "sass resource/scss/style.scss public/style.css",
+    "watch": "sass resource/scss/style.scss public/style.css -w"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/takeru0430/go-blog.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/takeru0430/go-blog/issues"
+  },
+  "homepage": "https://github.com/takeru0430/go-blog#readme",
+  "dependencies": {
+    "milligram": "^1.4.1",
+    "sass": "^1.37.2",
+    "uikit": "^3.7.1"
+  }
+}

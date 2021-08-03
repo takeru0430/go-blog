@@ -4,9 +4,7 @@ import "net/http"
 import "local.pkg/ctrl"
 import "os"
 
-
-/* ルーティングをセット */
-// func Set() bool {
+// Set ルーティングをセット
 func Set() {
     // get env data
     p := os.Getenv("SUB_DIRECTORY_PATH")
