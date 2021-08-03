@@ -22,6 +22,12 @@ func Set() {
      */
     http.HandleFunc(p + "/admin", ctrl.Admin) /* ダッシュボード */
 
+    http.Handle(p + "/assets/", http.StripPrefix("/assets/", http.FileServer(http.Dir("public"))))
+
+    http.HandleFunc("/favicon.ico", func(w http.ResponseWriter, r *http.Request) {
+        http.ServeFile(w, r, "public/favicon.ico")
+    })
+
     // トップページ
     http.HandleFunc(p + "/", ctrl.Home)
 

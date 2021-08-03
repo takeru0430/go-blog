@@ -1,21 +1,18 @@
 package ctrl
 
-import "log"
-import "net/http"
-import "os"
+import (
+    "net/http"
+    "os"
+)
+
 //import . "go-blog/db"
 
-
-/**
- * 固定ページ系のコントローラ
- */
-
-// トップページ
+// Home 静的ファイルのコントローラ
 func Home(w http.ResponseWriter, r *http.Request) {
     // get env data
     p := os.Getenv("SUB_DIRECTORY_PATH")
 
-    if r.URL.Path == p + "/" {
+    if r.URL.Path ==  p + "/" {
         // DB
         /*
         row, err := Db.Query("SELECT name FROM `dev_go-blog`.post WHERE id = 1")
@@ -37,8 +34,7 @@ func Home(w http.ResponseWriter, r *http.Request) {
                 CurrentPath: ".",
             })
     } else {
-        // 全体的なエラーを管理
-        log.Fatal("404");
-        errorHandler(w, r, http.StatusInternalServerError)
+        // ここまで来たリクエストは、存在しないパス
+        http.NotFound(w, r)
     }
 }

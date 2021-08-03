@@ -22,7 +22,7 @@ func Admin(w http.ResponseWriter, r *http.Request) {
             MetaData{
                 Title:       "管理画面｜ブログフレームワーク",
                 Description: "",
-                CurrentPath: "../../",
+                CurrentPath: "../..",
             })
     } else {
         // 全体的なエラーを管理
