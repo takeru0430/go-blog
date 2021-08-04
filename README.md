@@ -8,13 +8,10 @@ go-blog is a CMS with a WordPress-like template hierarchy and a Laravel-like con
 
 #### Post
 
-PostTitle : post title
-
-PostSlug  : post slug (use in URL)
-
-PostBody  : post body (usable markdown)
-
-PostStatus: post status 
+- PostTitle : post title
+- PostSlug  : post slug (use in URL)
+- PostBody  : post body (usable markdown)
+- PostStatus: post status 
 
 #### Category
 
