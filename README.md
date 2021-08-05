@@ -6,7 +6,7 @@ go-blog is a CMS with a WordPress-like template hierarchy and a Laravel-like con
 
 ### Summary
 
-This framework designed by MVC architecture and DDD architecture.
+This framework designed by MVC-"like" architecture and DDD-"like" architecture.
 
 Forgive me, I'm a beginner.:wink:
 
