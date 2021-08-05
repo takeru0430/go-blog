@@ -7,7 +7,10 @@ import _ "github.com/go-sql-driver/mysql"
 import env "github.com/joho/godotenv"
 
 func connect() *sql.DB {
-    env.Load("../.env")
+    err := env.Load(".env")
+    if err != nil {
+        log.Fatal(err)
+    }
 
     // 環境変数の読み込みとセット
     u := os.Getenv("DB_USER")
@@ -19,12 +22,12 @@ func connect() *sql.DB {
     db, err := sql.Open("mysql", u + ":" + p + "@tcp(" + h + ")/" + n)
     if err != nil {
         // エラー時の処理
-        log.Fatal("err:DB接続エラー %v", err)
+        log.Fatalf("err:DB接続エラー %v", err)
     }
 
     return db
 }
 
-// 外部からこの接続を利用してSQLを流せるようにする
+// Db 外部からこの接続を利用してSQLを流せるようにする
 var Db *sql.DB = connect()
 

@@ -9,16 +9,14 @@ func Set() {
     // get env data
     p := os.Getenv("SUB_DIRECTORY_PATH")
 
-
-    // 記事関連
-    http.HandleFunc(p + "/post/create/form", ctrl.PostCreateForm)
-    http.HandleFunc(p + "/post/create/check", ctrl.PostCreateCheck)
-    http.HandleFunc(p + "/post/create/submit", ctrl.PostCreateSubmit)
-
     /**
-     * admin関連
+     * gb 固有のルート
      */
-    http.HandleFunc(p + "/admin", ctrl.Admin) /* ダッシュボード */
+    http.HandleFunc(p + "/gb-admin", ctrl.Admin) // ダッシュボード
+    // 記事関連
+    http.HandleFunc(p + "/gb-admin/post/create", ctrl.PostCreateForm)
+    http.HandleFunc(p + "/gb-admin/post/create/check", ctrl.PostCreateCheck)
+    http.HandleFunc(p + "/gb-admin/post/create/submit", ctrl.PostCreateSubmit)
 
     http.Handle(p + "/assets/", http.StripPrefix("/assets/", http.FileServer(http.Dir("public"))))
 

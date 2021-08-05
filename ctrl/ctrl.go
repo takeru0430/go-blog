@@ -1,10 +1,13 @@
 package ctrl
 
-import "html/template"
+import (
+    "html/template"
+    "local.pkg/catcherr"
+)
 import "log"
 import "net/http"
 
-// 各ページで共通の構造体
+// MetaData 各ページで共通の構造体
 type MetaData struct {
     Title string
     Description string
@@ -28,13 +31,11 @@ func errorHandler(w http.ResponseWriter, r *http.Request, status int) {
 func loadView(n string) *template.Template {
     page, err := template.ParseFiles(
         "./view/" + n + ".html",
-        "./view/_header.html",
-        "./view/_footer.html",
+        "./view/gb/_parts.html",
+        //"./view/gb/_footer.html",
     )
 
-    if err != nil {
-        log.Fatalf("template Error: %v", err)
-    }
+    catcherr.CatchAlertError(err)
 
     return page
 }

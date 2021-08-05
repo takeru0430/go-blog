@@ -6,6 +6,7 @@ replace (
 	local.pkg/ctrl => ./ctrl
 	local.pkg/db => ./db
 	local.pkg/routes => ./routes
+	local.pkg/catcherr => ./catcherr
 )
 
 require (
@@ -14,4 +15,5 @@ require (
 	local.pkg/ctrl v1.0.0 // indirect
 	local.pkg/db v1.0.0 // indirect
 	local.pkg/routes v1.0.0
+	local.pkg/catcherr v1.0.0
 )

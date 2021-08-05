@@ -1,15 +1,12 @@
 package main
 
 import (
-	env "github.com/joho/godotenv"
 	"local.pkg/routes"
 	log "log"
 	"net/http"
 )
 
 func main() {
-    env.Load()
-
     // ルーティングの初期化
     routes.Set()
 

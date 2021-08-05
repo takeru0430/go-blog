@@ -1,6 +1,9 @@
 package ctrl
 
-import "net/http"
+import (
+    catcherr "local.pkg/catcherr"
+    "net/http"
+)
 //import "regexp"
 //import . "go-blog/db"
 import "log"
@@ -11,28 +14,24 @@ import "strings"
  * 管理系のコントローラ
  */
 
-// ダッシュボード
+// Admin ダッシュボード
 func Admin(w http.ResponseWriter, r *http.Request) {
-    if r.URL.Path == "/admin" {
-        // ビューの取得
-        p := loadView("admin/index")
+    // ビューの取得
+    p := loadView("gb/admin/index")
 
-        // データセット
-        p.Execute(w,
-            MetaData{
-                Title:       "管理画面｜ブログフレームワーク",
-                Description: "",
-                CurrentPath: "../..",
-            })
-    } else {
-        // 全体的なエラーを管理
-        errorHandler(w, r, http.StatusInternalServerError)
-    }
+    // データセット
+    err := p.Execute(w,
+        MetaData{
+            Title:       "管理画面｜ブログフレームワーク",
+            Description: "",
+            CurrentPath: "../..",
+        })
+    catcherr.CatchWarnError(err)
 }
 
-// 記事の作成
+// AdminPostCreate 記事の作成
 func AdminPostCreate(w http.ResponseWriter, r *http.Request) {
-    if r.URL.Path == "/admin/post/create" {
+    if r.URL.Path == "ga/admin/post/create" {
         if r.Method == http.MethodGet {
             // ビューの取得
             p := loadView("post/create/index")

@@ -1,0 +1,23 @@
+{{template "gb-header" .}}
+    <h1>記事の確認</h1>
+    <form action="{{.CurrentPath}}/post/create/submit" method="POST">
+        <dl>
+            <dt><label>記事のタイトル</label></dt>
+            <dd>
+                {{.PostTitle}}
+            </dd>
+            <dt><label>記事のスラッグ</label></dt>
+            <dd>
+                {{.PostSlug}}
+            </dd>
+            <dt><label>本文</label></dt>
+            <dd>
+                {{.PostBody}}
+            </dd>
+        </dl>
+        <input type="hidden" name="title" value="{{.PostTitle}}">
+        <input type="hidden" name="slug" value="{{.PostSlug}}">
+        <input type="hidden" name="body" value="{{.PostBody}}">
+        <input type="submit" value="公開">
+    </form>
+{{template "gb-footer"}}

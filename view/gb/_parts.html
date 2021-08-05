@@ -1,0 +1,24 @@
+{{define "gb-header"}}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="urf-8">
+    <meta name="viewport" content="initial-scale=1">
+    <title>{{.Title}}</title>
+    <meta name="description" content="{{.Description}}">
+    <link rel="icon" href="{{.CurrentPath}}/favicon.ico">
+    <link rel="stylesheet" href="{{.CurrentPath}}/assets/style.css">
+</head>
+<body>
+<header class="global-header">
+    <div>go-blog</div>
+</header>
+{{end}}
+
+{{define "gb-footer"}}
+<footer class="global-footer">
+    <a class="uk-link" href="/">トップページ</a>
+</footer>
+</body>
+</html>
+{{end}}
