@@ -1,14 +1,13 @@
 package main
 
 import (
-	"local.pkg/routes"
-	log "log"
+	"log"
 	"net/http"
 )
 
 func main() {
     // ルーティングの初期化
-    routes.Set()
+    setRouter()
 
     // listen
     err := http.ListenAndServe(":3000", nil)
